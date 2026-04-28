@@ -1,6 +1,6 @@
 # hay-bales
 
-Small project about finding hay bales using YOLO object detection.
+Small project about finding hay bales using YOLO object detection. Ideally would like to eventually get a lightweight working version to run live on a small drone.
 
 ## Overview
 
