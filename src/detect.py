@@ -9,7 +9,7 @@ def main(weights_path, source_path, conf_thresh, show_img, save_img):
     results = model(
         source=source_path, 
         save=save_img, 
-        show=show_img,
+        show=False, # We handle showing manually to avoid the blinking issue
         conf=conf_thresh,
         iou=0.3, # Avoid overlapping detections
         line_width=1,
@@ -23,6 +23,23 @@ def main(weights_path, source_path, conf_thresh, show_img, save_img):
         else:
             total_objects = sum(len(r.boxes) for r in results if r.boxes)
             print(f"Analysis complete! Processed {len(results)} image(s) and found {total_objects} total objects. (Saving is disabled)")
+        
+        # Manually display the results so images pause until a key is pressed
+        if show_img:
+            import cv2
+            print("Displaying results. Press any key to continue to the next image (or 'q' to quit).")
+            for r in results:
+                annotated_img = r.plot()
+                cv2.imshow("YOLO Detections", annotated_img)
+                
+                # If it's a video frame, play it automatically (1ms wait). If it's an image, pause infinitely (0ms wait).
+                ext = r.path.split('.')[-1].lower()
+                wait_time = 1 if ext in ['mp4', 'avi', 'mov', 'mkv', 'webm'] else 0
+                
+                if cv2.waitKey(wait_time) & 0xFF == ord('q'):
+                    break
+            cv2.destroyAllWindows()
+            
     else:
         print("No results found or the source is empty.")
 
