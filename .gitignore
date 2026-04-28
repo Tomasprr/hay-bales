@@ -21,3 +21,12 @@
 modeltest.py
 
 runs\detect\predict\*
+
+# Archivos de entorno y secretos
+.env
+
+# Ignorar también entornos virtuales y la carpeta de pesos grandes
+venv/
+__pycache__/
+runs/
+*.pt
