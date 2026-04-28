@@ -21,8 +21,8 @@ def main(weights_path, source_path, conf_thresh, show_img, save_img):
             output_path = results[0].save_dir
             print(f"Analysis complete! Results saved to: {output_path}")
         else:
-            num_objects = len(results[0].boxes) if results[0].boxes else 0
-            print(f"Analysis complete! Found {num_objects} objects. (Saving is disabled)")
+            total_objects = sum(len(r.boxes) for r in results if r.boxes)
+            print(f"Analysis complete! Processed {len(results)} image(s) and found {total_objects} total objects. (Saving is disabled)")
     else:
         print("No results found or the source is empty.")
 
