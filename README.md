@@ -36,15 +36,16 @@ This project uses YOLO (You Only Look Once) to detect hay bales in images and vi
 
    **Example Output:**
    ```
-   Cargando el cerebro artificial desde: weights/best.pt...
-   Analizando la imagen: prueba2.jpg...
+   Loading model from: weights/best.pt...
+   Analyzing: prueba2.jpg...
 
    image 1/1 C:\Users\tomas\Documents\Projects\hay-bales\prueba2.jpg: 384x640 5 hay - v6 2023-10-25 6-45pms, 102.6ms
    Speed: 4.1ms preprocess, 102.6ms inference, 2.6ms postprocess per image at shape (1, 3, 384, 640)
-   Results saved to C:\Users\tomas\Documents\Projects\hay-bales\runs\detect\predict-5
-   ¡Análisis completado! La imagen con las cajas está en: C:\Users\tomas\Documents\Projects\hay-bales\runs\detect\predict-5
+   Analysis complete! Results saved to: C:\Users\tomas\Documents\Projects\hay-bales\runs\detect\predict-5
    ```
    The script loads the trained model, detects the hay bales (finding 5 in this example), and saves a new image with bounding boxes drawn over the detections in the automatically generated `runs/detect/predict-*/` directory.
+   
+   ![Example Detection Result](assets/prueba2_result.jpg)
 
 4. **Training / Exploration**:
    Run the environment with Jupyter to open the notebooks in `notebooks/`:
