@@ -8,6 +8,10 @@
 *.webp
 *.svg
 
+# Allow images in assets folder
+!assets/
+!assets/*
+
 # Videos
 *.mp4
 *.avi
