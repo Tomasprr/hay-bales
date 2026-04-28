@@ -27,12 +27,13 @@ This project uses YOLO (You Only Look Once) to detect hay bales in images and vi
 3. **Inference / Detection**:
    To analyze a new image, video, or entire directory, use the detection script.
    ```bash
-   python src/detect.py --source prueba2.jpg --weights weights/best.pt
+   python src/detect.py --source prueba2.jpg --weights weights/best.pt --save
    ```
    **Optional Arguments:**
    - `--source`: Path to a single image, video file, or directory of images (default: `prueba.png`).
    - `--conf`: Sets the confidence threshold (e.g., `--conf 0.7`) to filter out weak detections (default: `0.5`).
    - `--show`: Include this flag to display the output in a popup window (omit for headless environments like drones or servers).
+   - `--save`: Include this flag to save the image with bounding boxes to `runs/detect/`. By default, saving is disabled.
 
    **Example Output:**
    ```
