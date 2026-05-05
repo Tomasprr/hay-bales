@@ -6,6 +6,11 @@ Small project about finding hay bales using YOLO object detection. Ideally would
 
 This project uses YOLO (You Only Look Once) to detect hay bales in images and video.
 
+## Project state
+
+Currently it does propperly detect hay bales under good conditions and can spot the diferences between raw and plastic covered hay bales. Having some issues on the detection of bales covered in black plastic. Next steps include adding it to a drone for live detection.
+
+
 ## Project Structure
 
 - `notebooks/` - Jupyter notebooks for exploration and training
